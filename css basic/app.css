@@ -1,0 +1,26 @@
+h1 {
+    color: plum;
+    text-align: center;
+    font-weight: normal;
+    text-decoration: underline #84fab0 wavy;
+    letter-spacing: 10px;
+    font-size: 80px;
+    font-family: 'Segoe UI', fantasy, Helvetica, sans-serif;
+}
+
+h2 {
+    color:teal;
+    /* background-color: red; */
+}
+
+button {
+    color: tomato;
+    background-color: cyan;
+}
+
+p {
+    line-height: 2.5;
+    color: olive;
+    /* background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    font-weight: 700; */
+}
