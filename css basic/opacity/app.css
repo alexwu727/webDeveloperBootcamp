@@ -1,0 +1,17 @@
+section {
+    background-color: rgb(147, 112, 0);
+    width: 600px;
+    height: 600px;
+}
+
+#rgba {
+    width: 50%;
+    height: 50%;
+    background-color: #c870d8b7;
+}
+#opacity {
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+    opacity: 0.6;
+}
