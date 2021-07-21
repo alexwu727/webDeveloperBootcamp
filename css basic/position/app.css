@@ -1,0 +1,45 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+#mid {
+    background-color: #81b29a;
+}
+
+#static #mid {
+    position: static;
+    /* positioned according to the normal flow of the document */
+    top: 100px;
+}
+#relative #mid {
+    position: relative;
+    /* positioned according to the normal flow of the document, 
+    and then offset relative to itself based on the values. */
+    top: 50px;
+    left: 50px;
+}
+
+#absolute {
+    position: relative;
+}
+
+#absolute #mid {
+    position: absolute;
+    /* removed from the normal document flow, and no space for the element.
+    It is positioned relative to its closest positioned ancestor. */
+    top: 50px;
+    left: 50px;
+}
+
+#fixed #mid {
+    position: fixed;
+    /* removed from the normal document flow, and no space for the element.
+    It is positioned relative to its closest positioned ancestor. */
+    top: 50px;
+    left: 50px;
+}
