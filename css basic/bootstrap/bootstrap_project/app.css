@@ -1,0 +1,85 @@
+body {
+    background-color: #001d3d;
+    font-family: 'Roboto', sans-serif;
+}
+
+#mainNavbar .navbar-brand {
+    color: #ffd60a;
+    font-size: 1.5rem;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #ffc300;
+}
+
+#special-text h1{
+    margin-bottom: 0;
+    
+}
+
+#special-text h1:nth-of-type(1){
+    font-size: 3em;
+    color:#ffffff;
+}
+#special-text h1:nth-of-type(2){
+    font-size: 2.7em;
+    color:#ffffffee;
+}
+#special-text h1:nth-of-type(3){
+    font-size: 2.4em;
+    color:#ffffffdd;
+}
+#special-text h1:nth-of-type(4){
+    font-size: 2.1em;
+    color:#ffffffcc;
+}
+#special-text h1:nth-of-type(5){
+    font-size: 1.8em;
+    color:#ffffffbb;
+}
+#special-text h1:nth-of-type(6){
+    font-size: 1.5em;
+    color:#ffffffaa;
+}
+
+h2 {
+    color: #ffc300;
+}
+
+h2:hover, h1:hover {
+    color: white;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ffc300, 0 0 30px #ffc300, 0 0 40px #ffc300, 0 0 55px #ffc300, 0 0 75px #ffc300, 2px 2px 2px rgba(255,195,0,0);
+}
+
+.text-box {
+    min-height: 30em;
+}
+
+.text-box p {
+    color: #ffd60a;
+    font-weight: 100;
+}
+
+.left-image{
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.right-image{
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+@media (max-width: 768px) {
+    .left-image{
+        border-radius: 0;
+    }
+    .right-image{
+        border-radius: 0;
+    }
+    
+}
+
+.navbar.scrolled{
+    background: #003566;
+}
