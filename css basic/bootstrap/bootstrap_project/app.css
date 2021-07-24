@@ -82,4 +82,5 @@ h2:hover, h1:hover {
 
 .navbar.scrolled{
     background: #003566;
+    transition: background 0.5;
 }
