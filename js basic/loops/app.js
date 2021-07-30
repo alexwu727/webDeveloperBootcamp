@@ -50,3 +50,50 @@ for (let i = 0; i < seatingChart.length; i++) {
         console.log(row[j]);
     }
 }
+
+// while loop
+console.log("---------- while loop ----------")
+let i = 0
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+
+// let input = prompt("Hey, say something!")
+// while (true) {
+//     input = prompt(input);
+//     if (input.toLowerCase() === "stop copying me") break;
+// }
+// console.log("OK YOU WIN!")
+
+// number guessing game
+console.log("---------- number guessing game ----------")
+
+let maximum = parseInt(prompt("Enter the maximum number!"));
+while (!maximum) {
+    maximum = parseInt(prompt("Enter a valid number!"));
+}
+
+const targetNum = Math.floor(Math.random() * maximum) + 1;
+console.log(targetNum)
+
+let guess = prompt("Enter your first guess");
+let attempts = 1;
+while (parseInt(guess) !== targetNum) {
+    if (guess === "q") break;
+    if (guess > targetNum) {
+        guess = prompt("guess lower")
+    } else {
+        guess = prompt("guess higher")
+    }
+    attempts++;
+}
+
+if (guess === "q") {
+    console.log(`Too bad you quit the game. The answer is ${targetNum}`)
+} else if (attempts == 1) {
+    console.log("Wow! You get the answer on first try!")
+} else {
+    console.log(`Congrats! The answer is ${targetNum}.`)
+    console.log(`It took you ${attempts} guesses.`)
+}
