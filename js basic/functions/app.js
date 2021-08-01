@@ -51,3 +51,63 @@ function returnDay(num) {
             break;
     }
 }
+
+
+// scope
+let a = 0;
+function f1() {
+    console.log(a)
+}
+console.log(a)
+f1()
+
+console.log("--------------------------")
+
+let b = 0;
+function f2() {
+    let b = 1;
+    console.log(b)
+}
+console.log(b)
+f2()
+
+// function object
+// function add(x, y) {
+//     return x + y;
+// }
+
+const add2 = function (x, y) {
+    return x + y;
+};
+
+function callTwice(func) {
+    func();
+    func();
+}
+
+// function isBetween1(num) {
+//     return num >= 50 && num <= 100
+// }
+// function isBetween2(num) {
+//     return num >= 1 && num <= 10
+// }
+
+function makeBetweenFunc(min, max) {
+    return function (num) {
+        return num >= min && num <= max;
+    }
+}
+
+const isChild = makeBetweenFunc(0, 18);
+const isAdult = makeBetweenFunc(19, 64);
+const isSenior = makeBetweenFunc(65, 120);
+
+// this
+const hen = {
+    name: "Helen",
+    eggCount: 0,
+    layAnEgg() {
+        this.eggCount += 1;
+        return "EGG";
+    }
+}
