@@ -32,3 +32,44 @@ function raceResults(gold, silver, ...everyoneElse) {
     console.log(`Silver medal goes to ${silver}`)
     console.log(`and thanks to everyone else: ${everyoneElse}`)
 }
+
+// destructuring 
+const raceResults2 = ["Eliud Kipchoge", "Feyisa Lelisa", "Galen Rupp", "Alex Wu"]
+const [gold, silver, bronze] = raceResults2;
+// gold = Eliud Kipchoge
+// silver = Feyisa Lelisa
+// bronze = Galen Rupp
+
+const [fastest, ...everyoneElse] = raceResults2;
+// fastest = Eliud Kipchoge
+// everyoneElse = ["Feyisa Lelisa", "Galen Rupp", "Alex Wu"]
+
+// destructuring with object
+const user = {
+    email: "harvey@gmail.com",
+    password: "ahsdfljasdf",
+    firstName: "Harvey",
+    lastName: "Milk",
+    born: 1930,
+    bio: "Harvey Bernard Milk was an American politician.",
+    city: "San Francisco",
+    state: "California"
+};
+// const firstName = user.firstName
+// const lastName = user.lastName
+// const email = user.email
+const { email, firstName, lastName } = user;
+
+const { born: birthYear } = user;           // rename variable
+const { died: deathYear = "N/A" } = user;   // default value
+
+// destructuring params
+
+// function fullName(user) {
+//     const { firstName, lastName } = user
+//     return `${firstName} ${lastName}`
+// }
+
+function fullName({ firstName, lastName }) {
+    return `${firstName} ${lastName}`
+}
