@@ -51,3 +51,20 @@ const movies3 = movies.map((movie) => {
 
 const movies4 = movies.map((movie) => `${movie.title} - ${movie.score} / 100`)
 
+// set timeout and set interval
+console.log("hello")
+setTimeout(() => {
+    console.log("...are you still there?")
+}, 3000)
+
+setTimeout(() => {
+    console.log("hello?")
+}, 6000)
+console.log("goodbye")
+
+const id = setInterval(() => {
+    console.log(Math.random())
+}, 1000);
+// using clearInterval to stop it
+// clearInterval(id)
+
