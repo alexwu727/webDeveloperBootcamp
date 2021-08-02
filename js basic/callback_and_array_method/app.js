@@ -79,3 +79,8 @@ const smallNums2 = nums2.filter(n => n < 5);
 const goodMovies = movies
     .filter(m => m.score > 90)
     .map(m => m.title)
+
+
+const total = nums.reduce((total, num) => total + num);
+const min = arr => arr.reduce((min, num) => (num < min) ? num : min);
+const total2 = nums.reduce((total, num) => total + num, 100);
