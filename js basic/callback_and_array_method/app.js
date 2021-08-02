@@ -52,19 +52,30 @@ const movies3 = movies.map((movie) => {
 const movies4 = movies.map((movie) => `${movie.title} - ${movie.score} / 100`)
 
 // set timeout and set interval
-console.log("hello")
-setTimeout(() => {
-    console.log("...are you still there?")
-}, 3000)
+// console.log("hello")
+// setTimeout(() => {
+//     console.log("...are you still there?")
+// }, 3000)
 
-setTimeout(() => {
-    console.log("hello?")
-}, 6000)
-console.log("goodbye")
+// setTimeout(() => {
+//     console.log("hello?")
+// }, 6000)
+// console.log("goodbye")
 
-const id = setInterval(() => {
-    console.log(Math.random())
-}, 1000);
+// const id = setInterval(() => {
+//     console.log(Math.random())
+// }, 1000);
 // using clearInterval to stop it
 // clearInterval(id)
 
+const nums2 = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+const odds = nums.filter(n => {
+    return n % 2 === 1;
+})
+
+const smallNums = nums2.map(n => n < 5);
+const smallNums2 = nums2.filter(n => n < 5);
+
+const goodMovies = movies
+    .filter(m => m.score > 90)
+    .map(m => m.title)
