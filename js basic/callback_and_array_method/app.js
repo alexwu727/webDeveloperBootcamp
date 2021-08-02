@@ -84,3 +84,17 @@ const goodMovies = movies
 const total = nums.reduce((total, num) => total + num);
 const min = arr => arr.reduce((min, num) => (num < min) ? num : min);
 const total2 = nums.reduce((total, num) => total + num, 100);
+
+const person = {
+    firstName: 'Viggo',
+    lastName: 'Mortensen',
+    fullName: function () {
+        return `${this.firstName} ${this.lastName}`
+    },
+    shoutName: function () {
+        setTimeout(() => {
+            console.log(this);
+            console.log(this.fullName().toUpperCase())
+        }, 2000);
+    }
+}
