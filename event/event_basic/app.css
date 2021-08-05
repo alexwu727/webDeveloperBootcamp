@@ -1,0 +1,9 @@
+button {
+    display: block;
+    margin: 1em;
+}
+
+.bold {
+    font-weight: bold;
+    color: tomato;
+}
