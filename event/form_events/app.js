@@ -16,3 +16,10 @@ const post = (username, tweet) => {
     newTweet.innerHTML = `<b>${username}</b> - ${tweet}`;
     tweets.appendChild(newTweet);
 }
+
+// input event
+const h1 = document.querySelector("h1");
+const input = document.querySelector("#inputEvent");
+input.addEventListener("input", (evt) => {
+    h1.innerText = input.value
+})
