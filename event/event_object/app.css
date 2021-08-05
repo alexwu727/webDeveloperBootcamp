@@ -1,0 +1,14 @@
+div#outerBox {
+    display: block;
+    margin: 20px auto;
+    height: 20em;
+    width: 20em;
+    border: 2px solid black;
+}
+div#movingBox {
+    /* display: flex; */
+    background-color: salmon;
+    position: relative;
+    height: 10px;
+    width: 10px;
+}
