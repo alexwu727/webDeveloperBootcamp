@@ -23,3 +23,8 @@ const input = document.querySelector("#inputEvent");
 input.addEventListener("input", (evt) => {
     h1.innerText = input.value
 })
+
+// delegation
+tweets.addEventListener("click", (evt) => {
+    evt.target.nodeName === "LI" && evt.target.remove();
+})
