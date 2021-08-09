@@ -13,21 +13,32 @@
 </head>
 
 <body>
-    <h1><span id="p1Score"></span> to <span id="p2Score"></span></h1>
-    <select>
-        <option value="3" selected>3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-    </select>
-    <button id="p1Btn">+1 Player One</button>
-    <button id="p2Btn">+1 Player Two</button>
-    <button id="resetBtn">Reset</button>
+    <img src="https://images.unsplash.com/photo-1624936188350-883a61a44116?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+        alt="">
+    <p id="cardHeader">Ping Pong Score Keeper</p>
+    <div class="container">
+        <h1><span id="p1Score"></span> to <span id="p2Score"></span></h1>
+        <p>Use the buttions below to keep score</p>
+        <div>
+            <label for="playto">Playing To</label>
+            <select id="playto">
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+            </select>
+        </div>
+    </div>
+    <div class="btns">
+        <button id="p1Btn">+1 Player One</button>
+        <button id="p2Btn">+1 Player Two</button>
+        <button id="resetBtn">Reset</button>
+    </div>
     <script src="app.js"></script>
 </body>
 

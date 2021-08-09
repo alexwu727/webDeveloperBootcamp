@@ -1,16 +1,68 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-
-#score {
-    display: flex;
-    justify-content: space-evenly;
+img {
+    display: block;
+    width: 468px;
+    box-shadow: 0 0 30px rgb(198, 198, 198);
+    margin: 0 auto;
 }
 
+#cardHeader {
+    width: 430px;
+    font-weight: bold;
+    box-shadow: 0 0 3px rgb(198, 198, 198);
+    padding: 0.8em 19px;
+    margin: 0 auto;
+}
+.container {
+    margin: auto;
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    box-shadow: 0 0 3px rgb(198, 198, 198);
+    padding: 0.8em 19px;
+}
+
+
+h1 {
+    margin: 0.3em 0 0 0;
+    /* padding: 0.5em 1em; */
+
+}
+
+.container p{
+    color: rgb(72, 72, 72);
+    margin: 0.3em 0;
+}
+label {
+    font-weight: bold;
+}
+select {
+    width: 80px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-color: rgb(198, 198, 198);
+    border-radius: 0.4em;
+    padding: 0.5em 0.8em;
+    margin: 1em 0.3em;
+}
+
+.btns {
+    display: flex;
+    width: 430px;
+    box-shadow: 0 0 3px rgb(198, 198, 198);
+    padding: 0.8em 19px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
 button {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     /* letter-spacing: 0.2em; */
     background-color: white;
     padding: 0.5em 1.3em;
@@ -19,24 +71,34 @@ button {
 }
 
 button:nth-of-type(1){
-    border: 5px solid rgb(175, 202, 225);
+    border: 5px solid #0066da;
     
 }
 button:nth-of-type(1):hover{
     color: white;
-    background-color: rgb(175, 202, 225);
+    background-color: #0066da;
+}
+button:nth-of-type(1):disabled{
+    color: rgb(194, 194, 194);
+    border-color: #0066da7c;
+    background-color: white;
 }
 button:nth-of-type(2){
-    border: 5px solid rgb(202, 225, 175);
+    border: 5px solid #34a853;
 }
 button:nth-of-type(2):hover{
     color: white;
-    background-color: rgb(202, 225, 175);
+    background-color: #34a853;
+}
+button:nth-of-type(2):disabled{
+    color: rgb(194, 194, 194);
+    border-color: #34a8537c;
+    background-color: white;
 }
 button:nth-of-type(3){
-    border: 5px solid rgb(225, 175, 202);
+    border: 5px solid #e94335;
 }
 button:nth-of-type(3):hover{
     color: white;
-    background-color: rgb(225, 175, 202);
+    background-color: #e94335;
 }
