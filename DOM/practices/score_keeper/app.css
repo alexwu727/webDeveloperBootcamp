@@ -1,0 +1,42 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#score {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    /* letter-spacing: 0.2em; */
+    background-color: white;
+    padding: 0.5em 1.3em;
+    border-radius: 10em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:nth-of-type(1){
+    border: 5px solid rgb(175, 202, 225);
+    
+}
+button:nth-of-type(1):hover{
+    color: white;
+    background-color: rgb(175, 202, 225);
+}
+button:nth-of-type(2){
+    border: 5px solid rgb(202, 225, 175);
+}
+button:nth-of-type(2):hover{
+    color: white;
+    background-color: rgb(202, 225, 175);
+}
+button:nth-of-type(3){
+    border: 5px solid rgb(225, 175, 202);
+}
+button:nth-of-type(3):hover{
+    color: white;
+    background-color: rgb(225, 175, 202);
+}
