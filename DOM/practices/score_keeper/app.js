@@ -17,7 +17,7 @@ p1Btn.addEventListener("click", () => {
     selectWinningScore.disabled = true;
     p1Score += 1;
     p1ScoreDisplay.innerText = `${p1Score}`
-    if (p1Score >= winningScore) {
+    if (p1Score >= winningScore & (p1Score - p2Score) > 1) {
         p1ScoreDisplay.style.color = "green";
         p2ScoreDisplay.style.color = "red";
         p1Btn.disabled = true;
@@ -28,7 +28,7 @@ p2Btn.addEventListener("click", () => {
     selectWinningScore.disabled = true;
     p2Score += 1;
     p2ScoreDisplay.innerText = `${p2Score}`
-    if (p2Score == winningScore) {
+    if (p2Score >= winningScore & (p2Score - p1Score) > 1) {
         p2ScoreDisplay.style.color = "green";
         p1ScoreDisplay.style.color = "red";
         p1Btn.disabled = true;
