@@ -1,0 +1,84 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+/* #container */
+#firstRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+#difficuty {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#difficuty button{ 
+    padding: 0.5em 1em;
+    margin: 5px auto;
+    border: 1px solid black;
+    border-radius: 0.3em;
+}
+
+#gameWindow {
+    position: relative;
+    display: flex;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    border: 2px solid red;
+}
+#restartWindow {
+    display: in;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.392);
+}
+
+#userInput {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#userInput button {
+    margin: 20px auto;
+    padding: 0.5em 1em;
+}
+
+#startButton {
+    display: block;
+    margin: auto;
+}
+
+.btn {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    background-color: white;
+    padding: 0.5em 2em;
+    border: 5px solid rgb(175, 202, 225);
+    border-radius: 10em;
+}
+
+.dot {
+    display: in;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+}
+
+.displayNone {
+    display: none !important;
+}
