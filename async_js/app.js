@@ -76,3 +76,37 @@ fakeRequestCallback("books.com/page1",
     }, function (err) {
         console.log("Error!", err)
     })
+
+// fakeRequestPromise("books.com/page1").then((response) => {
+//     console.log("It worked!(1st)")
+//     console.log(response)
+//     fakeRequestPromise("books.com/page2").then((response) => {
+//         console.log("It worked!(2nd)")
+//         console.log(response)
+//         fakeRequestPromise("books.com/page3").then((response) => {
+//             console.log("It worked!(3rd)")
+//             console.log(response)
+//         }).catch((err) => {
+//             console.log("Error!", err)
+//         })
+//     }).catch((err) => {
+//         console.log("Error!", err)
+//     })
+// }).catch((err) => {
+//     console.log("Error!", err)
+// })
+
+fakeRequestPromise("books.com/page1").then((response) => {
+    console.log("It worked!(1st)")
+    console.log(response)
+    return fakeRequestPromise("books.com/page2")
+}).then((response) => {
+    console.log("It worked!(2nd)")
+    console.log(response)
+    return fakeRequestPromise("books.com/page3")
+}).then((response) => {
+    console.log("It worked!(3rd)")
+    console.log(response)
+}).catch((err) => {
+    console.log("Error!", err)
+})
