@@ -10,7 +10,7 @@
 //                 setTimeout(() => {
 //                     document.body.style.backgroundColor = "blue";
 //                     setTimeout(() => {
-//                         document.body.style.backgroundColor = "purple";
+//                         document.body.style.backgroundColor = "violet";
 //                         setTimeout(() => {
 //                             document.body.style.backgroundColor = "white";
 //                         }, 500)
@@ -120,14 +120,14 @@ const delayedColorChange = (color, delay) => {
     })
 }
 
-delayedColorChange("red", 1000)
-    .then(() => delayedColorChange("orange", 1000))
-    .then(() => delayedColorChange("yellow", 1000))
-    .then(() => delayedColorChange("green", 1000))
-    .then(() => delayedColorChange("blue", 1000))
-    .then(() => delayedColorChange("indigo", 1000))
-    .then(() => delayedColorChange("purple", 1000))
-    .then(() => delayedColorChange("white", 1000))
+// delayedColorChange("red", 1000)
+//     .then(() => delayedColorChange("orange", 1000))
+//     .then(() => delayedColorChange("yellow", 1000))
+//     .then(() => delayedColorChange("green", 1000))
+//     .then(() => delayedColorChange("blue", 1000))
+//     .then(() => delayedColorChange("indigo", 1000))
+//     .then(() => delayedColorChange("violet", 1000))
+//     .then(() => delayedColorChange("white", 1000))
 
 // async function
 async function hello() {
@@ -156,3 +156,15 @@ login("hello", "password")
     .catch(err => {
         console.log(err)
     })
+
+// await
+async function rainbow() {
+    await delayedColorChange("red", 500)
+    await delayedColorChange("orange", 500)
+    await delayedColorChange("yellow", 500)
+    await delayedColorChange("green", 500)
+    await delayedColorChange("blue", 500)
+    await delayedColorChange("indigo", 500)
+    await delayedColorChange("violet", 500)
+    console.log("ALL DONE")
+}
