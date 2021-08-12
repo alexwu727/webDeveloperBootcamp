@@ -55,27 +55,27 @@ const fakeRequestPromise = (url) => {
     })
 }
 
-fakeRequestCallback("books.com/page1",
-    function (response) {
-        console.log("It worked!(1st)")
-        console.log(response)
-        fakeRequestCallback("books.com/page2",
-            function (response) {
-                console.log("It worked!(2nd)")
-                console.log(response)
-                fakeRequestCallback("books.com/page3",
-                    function (response) {
-                        console.log("It worked!(3rd)")
-                        console.log(response)
-                    }, function (err) {
-                        console.log("Error!", err)
-                    })
-            }, function (err) {
-                console.log("Error!", err)
-            })
-    }, function (err) {
-        console.log("Error!", err)
-    })
+// fakeRequestCallback("books.com/page1",
+//     function (response) {
+//         console.log("It worked!(1st)")
+//         console.log(response)
+//         fakeRequestCallback("books.com/page2",
+//             function (response) {
+//                 console.log("It worked!(2nd)")
+//                 console.log(response)
+//                 fakeRequestCallback("books.com/page3",
+//                     function (response) {
+//                         console.log("It worked!(3rd)")
+//                         console.log(response)
+//                     }, function (err) {
+//                         console.log("Error!", err)
+//                     })
+//             }, function (err) {
+//                 console.log("Error!", err)
+//             })
+//     }, function (err) {
+//         console.log("Error!", err)
+//     })
 
 // fakeRequestPromise("books.com/page1").then((response) => {
 //     console.log("It worked!(1st)")
@@ -127,3 +127,32 @@ delayedColorChange("red", 1000)
     .then(() => delayedColorChange("blue", 1000))
     .then(() => delayedColorChange("indigo", 1000))
     .then(() => delayedColorChange("purple", 1000))
+    .then(() => delayedColorChange("white", 1000))
+
+// async function
+async function hello() {
+    return "hello!"
+}
+
+const sing = async () => {
+    // throw "Oh no!"          // reject
+    return "La La La La"    // resolve
+}
+
+sing().then((data) => {
+    console.log("Promise resolved:", data)
+})
+
+const login = async (username, password) => {
+    if (!username || !password) throw "Missing Credentials"
+    if (password.length <= 5) throw "Password is too short"
+    return `hello, ${username}`
+}
+
+login("hello", "password")
+    .then(response => {
+        console.log(response)
+    })
+    .catch(err => {
+        console.log(err)
+    })
