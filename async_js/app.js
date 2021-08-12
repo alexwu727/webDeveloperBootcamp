@@ -168,3 +168,15 @@ async function rainbow() {
     await delayedColorChange("violet", 500)
     console.log("ALL DONE")
 }
+
+// deal with rejection
+const makeTwoRequests = async () => {
+    try {
+        let data1 = await fakeRequestPromise("books.com/page1");
+        console.log(data1)
+        let data2 = await fakeRequestPromise("books.com/page2");
+        console.log(data2)
+    } catch (e) {
+        console.log("Noooooooo!", e)
+    }
+}
