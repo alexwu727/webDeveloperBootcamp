@@ -3,18 +3,18 @@ const data = `{"time":{"updated":"Aug 13, 2021 01:32:00 UTC","updatedISO":"2021-
 const parseData = JSON.parse(data);
 
 // fetch
-fetch("https://api.cryptonator.com/api/full/btc-usd") // return a promise
-    .then(res => {
-        console.log("Response, waiting to parse...", res);
-        return res.json();
-    })
-    .then(data => {
-        console.log("Data parsed...");
-        console.log(data.ticker.price);
-    })
-    .catch(err => {
-        console.log("Oh no! Error!", err);
-    })
+// fetch("https://api.cryptonator.com/api/full/btc-usd") // return a promise
+//     .then(res => {
+//         console.log("Response, waiting to parse...", res);
+//         return res.json();
+//     })
+//     .then(data => {
+//         console.log("Data parsed...");
+//         console.log(data.ticker.price);
+//     })
+//     .catch(err => {
+//         console.log("Oh no! Error!", err);
+//     })
 
 // async function
 const fetchPrice = async (coin) => {
@@ -26,3 +26,44 @@ const fetchPrice = async (coin) => {
         console.log("Oh no! Error!", err);
     }
 }
+
+// axios
+axios.get("https://api.cryptonator.com/api/full/btc-usd")
+    .then(res => {
+        console.log(res.data.ticker.price)
+    })
+    .catch(err => {
+        console.log("Error!", err)
+    })
+
+const axiosFetchPrice = async (coin) => {
+    try {
+        const res = await axios.get(`https://api.cryptonator.com/api/full/${coin}-usd`);
+        console.log(res.data.ticker.price)
+    } catch (err) {
+        console.log("Oh no! Error!", err);
+    }
+}
+
+////////
+const btn = document.querySelector("button")
+const jokes = document.querySelector("#jokes")
+
+const addNewJoke = async () => {
+    const jokeText = await getDadJoke();
+    const newLI = document.createElement("li");
+    newLI.innerText = jokeText;
+    jokes.append(newLI)
+}
+
+const getDadJoke = async () => {
+    try {
+        const config = { headers: { Accept: "application/json" } }
+        const res = await axios.get("https://icanhazdadjoke.com/", config);
+        return res.data.joke
+    } catch (err) {
+        return "no jokes here!"
+    }
+}
+
+btn.addEventListener("click", addNewJoke)
