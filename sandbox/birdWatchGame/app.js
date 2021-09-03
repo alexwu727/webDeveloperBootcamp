@@ -11,6 +11,7 @@ score.innerText = `Score: ${currentScore}`
 let difficuty = "easy";
 const difficutyWeight = { easy: 1, normal: 5, hard: 10, crazy: 20 }
 let answer = 0;
+
 const removePreviousDot = () => {
     let dots = document.querySelectorAll("#gameWindow div.dot")
     for (let dot of dots) {
@@ -31,8 +32,7 @@ const createRandomDot = (num) => {
     }
 }
 
-
-startButton.addEventListener("click", () => {
+const startANewSet = () => {
     startButton.style.display = "none";
     score.innerText = `Score: ${currentScore}`
     removePreviousDot();
@@ -53,10 +53,9 @@ startButton.addEventListener("click", () => {
             break;
     }
     createRandomDot(answer);
-    result.innerText = "";
     userAnswer.value = "";
-
-})
+}
+startButton.addEventListener("click", startANewSet)
 
 for (let difficutyButton of difficuties) {
     difficutyButton.addEventListener("click", () => {
@@ -91,6 +90,7 @@ const adjustScore = (num) => {
         result.innerText = "You Lose!";
         result.style.color = "red";
         currentScore = 0;
+    } else {
+        startANewSet();
     }
-
 }
