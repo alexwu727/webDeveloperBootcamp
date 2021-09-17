@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("partials/head") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random</title>
-</head>
-
-<body>
-    <h1>The random number is: <%= num %>
-    </h1>
-    <!-- <% if (num % 2) { %>
+    <body>
+        <%- include("partials/navbar") %>
+            <h1>The random number is: <%= num %>
+            </h1>
+            <!-- <% if (num % 2) { %>
         <h2>odd</h2>
         <% } else { %>
             <h2>even</h2>
             <% } %> -->
-    <h2>
-        <%= num%2 ? 'odd' : 'even' %>
-    </h2>
-    <% for( let i=0; i < 10; i++ ) { %>
-        <h3>
-            <%= i %>
-        </h3>
-        <% } %>
-</body>
-
-</html>
+            <h2>
+                <%= num%2 ? 'odd' : 'even' %>
+            </h2>
+            <% for( let i=0; i < 10; i++ ) { %>
+                <h3>
+                    <%= i %>
+                </h3>
+                <% } %>
+    </body>
+    <%- include("partials/footer") %>

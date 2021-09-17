@@ -10,20 +10,20 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get("/", (req, res) => {
     console.log("Welcome to the home page");
-    res.render("home")
+    res.render("home", { title: "Home" })
 })
 app.get("/rand", (req, res) => {
     num = Math.floor(Math.random() * 10) + 1
     console.log("Welcome to the random number page");
-    res.render("rand", { num }) // {num} = {num : num}
+    res.render("rand", { num, title: "Random" }) // {num} = {num : num}
 })
 app.get("/r/:subreddit", (req, res) => {
     const { subreddit } = req.params;
     const data = redditData[subreddit]
     if (data) {
-        res.render("subreddit", { ...data })
+        res.render("subreddit", { ...data, title: data.name })
     } else {
-        res.render("notfound", { subreddit })
+        res.render("notfound", { subreddit, title: "Not Found" })
     }
 
 })

@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("partials/head") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <body>
+        <%- include("partials/navbar") %>
+            <h1>home page <%= "hello world" .toUpperCase() %>
+            </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eos illo incidunt velit reprehenderit
+                necessitatibus animi, modi temporibus quibusdam quam, asperiores libero voluptate, labore eius ut
+                repellendus
+                cupiditate consequuntur commodi.</p>
+    </body>
 
-<body>
-    <h1>home page <%= "hello world" .toUpperCase() %>
-    </h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eos illo incidunt velit reprehenderit
-        necessitatibus animi, modi temporibus quibusdam quam, asperiores libero voluptate, labore eius ut repellendus
-        cupiditate consequuntur commodi.</p>
-</body>
-
-</html>
+    <%- include("partials/footer") %>
