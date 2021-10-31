@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: true,
-        min: 0
+        min: [0, "Price must be a positive number!"]
     },
     onSale: {
         type: Boolean,
@@ -32,6 +32,10 @@ const productSchema = new mongoose.Schema({
             type: Number,
             default: 0
         }
+    },
+    size: {
+        type: String,
+        enum: ["S", "M", "L"]
     }
 
 })
@@ -49,6 +53,17 @@ bike.save()
     })
 
 Product.findOneAndUpdate({ name: "Mountain Bike" }, { price: -599 }, { new: true, runValidators: true }) // update with validators
+    .then(data => {
+        console.log("It worked");
+        console.log(data);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+// enum test
+const jersey = new Product({ name: "Cycling Jersey", price: 28.50, categories: ["Cycling", "Safety"], size: "XS" }) // can not use size: "XS"
+jersey.save()
     .then(data => {
         console.log("It worked");
         console.log(data);
