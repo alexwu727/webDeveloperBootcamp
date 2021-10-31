@@ -40,6 +40,16 @@ const productSchema = new mongoose.Schema({
 
 })
 
+productSchema.methods.toggleOnSale = function () {
+    this.onSale = !this.onSale;
+    return this.save();
+}
+
+productSchema.methods.addCategory = function (newCat) {
+    this.categories.push(newCat);
+    return this.save();
+}
+
 const Product = mongoose.model("Product", productSchema);
 
 const bike = new Product({ name: "Mountain Bike", price: 599, categories: ["Cycling", "Safety"] })
@@ -71,3 +81,13 @@ jersey.save()
     .catch(err => {
         console.log(err);
     })
+
+const toggleOnSaleTest = function () {
+    const foundProduct = Product.findOne({ name: "Mountain Bike" });
+    await foundProduct.toggleOnSale;
+}
+
+const addCategoryTest = function () {
+    const foundProduct = Product.findOne({ name: "Mountain Bike" });
+    await foundProduct.addCategory("Outdoors");
+}
