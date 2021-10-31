@@ -40,6 +40,8 @@ const productSchema = new mongoose.Schema({
 
 })
 
+
+// method (used by a perticular item)
 productSchema.methods.toggleOnSale = function () {
     this.onSale = !this.onSale;
     return this.save();
@@ -48,6 +50,11 @@ productSchema.methods.toggleOnSale = function () {
 productSchema.methods.addCategory = function (newCat) {
     this.categories.push(newCat);
     return this.save();
+}
+
+// static (used by the model itself)
+productSchema.statics.fireSale = function () {
+    return this.updateMany({}, { onSale: true, price: 0 })
 }
 
 const Product = mongoose.model("Product", productSchema);
@@ -82,6 +89,7 @@ jersey.save()
         console.log(err);
     })
 
+
 const toggleOnSaleTest = function () {
     const foundProduct = Product.findOne({ name: "Mountain Bike" });
     await foundProduct.toggleOnSale;
@@ -91,3 +99,5 @@ const addCategoryTest = function () {
     const foundProduct = Product.findOne({ name: "Mountain Bike" });
     await foundProduct.addCategory("Outdoors");
 }
+
+Product.fireSale().then(res => console.log(res))
